@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'YOUR_DOCKERHUB_USERNAME/ai-resume-screening'
+        DOCKER_IMAGE = 'snehaydv/ai-resume-screening'
     }
 
     stages {
