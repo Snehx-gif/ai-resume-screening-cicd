@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resume-screening
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: resume-screening
+  template:
+    metadata:
+      labels:
+        app: resume-screening
+    spec:
+      containers:
+        - name: resume-screening
+          image: snehaydv/ai-resume-screening:cicd-v1
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
