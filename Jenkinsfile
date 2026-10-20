@@ -10,13 +10,13 @@ pipeline {
 
         stage('Verify Project Files') {
             steps {
-                bat 'dir'
+                sh 'ls -la'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t ai-resume-screening:cicd-v1 .'
+                sh 'docker build -t ai-resume-screening:cicd-v1 .'
             }
         }
     }
