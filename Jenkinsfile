@@ -14,9 +14,21 @@ pipeline {
             }
         }
 
+        stage('Install Docker Check') {
+            steps {
+                sh 'docker --version'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t ai-resume-screening:cicd-v1 .'
+            }
+        }
+
+        stage('Verify Docker Image') {
+            steps {
+                sh 'docker images ai-resume-screening'
             }
         }
     }
